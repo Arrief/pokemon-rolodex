@@ -34,16 +34,29 @@ class App extends Component {
       );
   }
 
+  onSearch = (event) => {
+    const searchStr = event.target.value.toLocaleLowerCase();
+    // update state with filtered array
+    this.setState(() => {
+      return { searchField: searchStr };
+    });
+  };
+
   render() {
     console.log(
       "Flow step 2 & 4: render; runs again after state change in step 3"
     );
+
+    // destructuring to make the code more readable instead of e.g. this.state.monsters
+    const { monsters, searchField } = this.state;
+    const { onSearch } = this;
+
     const imgUrl =
       "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/";
 
     // new array of Pokémon whose names include letters the user typed
-    const filteredPokemon = this.state.monsters.filter((monster) =>
-      monster.name.toLocaleLowerCase().includes(this.state.searchField)
+    const filteredPokemon = monsters.filter((monster) =>
+      monster.name.toLocaleLowerCase().includes(searchField)
     );
 
     /*
@@ -64,13 +77,7 @@ class App extends Component {
           className="search-box"
           type="search"
           placeholder="Search Pokémon"
-          onChange={(e) => {
-            const searchStr = e.target.value.toLocaleLowerCase();
-            // update state with filtered array
-            this.setState(() => {
-              return { searchField: searchStr };
-            });
-          }}
+          onChange={onSearch}
         />
         {/* if no filter search was typed, filteredPokemon = state.monsters */}
         {filteredPokemon.map((monster, id) => (
