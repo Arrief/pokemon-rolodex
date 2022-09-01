@@ -75,6 +75,7 @@ class App extends Component {
 
     return (
       <div className="App">
+        <h1 className="app-title">Pokémon Rolodex</h1>
         <SearchBox onChangeHandler={onSearch} placeholder="Search Pokémon" />
         {/* if no filter search was typed, filteredPokemon = state.monsters */}
         <CardList monsters={filteredPokemon} imageLink={imgUrl} />
