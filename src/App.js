@@ -61,18 +61,6 @@ class App extends Component {
       monster.name.toLocaleLowerCase().includes(searchField)
     );
 
-    /*
-    for (const monster of this.state.monsters) {
-      fetch(monster.url)
-        .then((response) => response.json())
-        .then((data) =>
-          this.setState(() => {
-            return { pokeImgs: data.sprites.front_default };
-          })
-        );
-    }
-    */
-
     return (
       <div className="App">
         <h1 className="app-title">Pokémon Rolodex</h1>
