@@ -1,5 +1,7 @@
 import { Component } from "react";
+import CardList from "./components/card-list/card-list";
 import "./App.css";
+import SearchBox from "./components/search-box/search-box";
 
 class App extends Component {
   // constructor method available on all class cmp, allows us to access local state
@@ -73,19 +75,9 @@ class App extends Component {
 
     return (
       <div className="App">
-        <input
-          className="search-box"
-          type="search"
-          placeholder="Search Pokémon"
-          onChange={onSearch}
-        />
+        <SearchBox onChangeHandler={onSearch} placeholder="Search Pokémon" />
         {/* if no filter search was typed, filteredPokemon = state.monsters */}
-        {filteredPokemon.map((monster, id) => (
-          <div key={id}>
-            <h3>{monster.name}</h3>
-            <img src={imgUrl + `${id + 1}.png`} alt={monster.name} />
-          </div>
-        ))}
+        <CardList monsters={filteredPokemon} imageLink={imgUrl} />
       </div>
     );
   }
