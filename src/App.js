@@ -8,7 +8,7 @@ class App extends Component {
     return (
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/" element={<DetailedInfo />} />
+        <Route path="/:id" element={<DetailedInfo />} />
       </Routes>
     );
   }

@@ -10,7 +10,6 @@ class Home extends Component {
     // initializing our state is pretty much main purpose to use constructor in React
     this.state = {
       monsters: [],
-      pokeImgs: [],
       searchField: "",
     };
     console.log("Flow step 1: constructor");
