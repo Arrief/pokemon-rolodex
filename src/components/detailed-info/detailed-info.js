@@ -38,24 +38,16 @@ class DetailedInfo extends Component {
 
     return (
       <div className="card-container" style={{ flexDirection: "column" }}>
-        {this.state.pokemonDetails ? (
-          <>
-            <h2>
-              {name.charAt(0).toUpperCase() + name.slice(1).toLowerCase()}
-            </h2>
-            <img src={sprites.front_default} alt={name} />
-            <p>Abilities:</p>
-            <ul>
-              {abilities.map((ability, index) => (
-                <li key={index}>{ability.ability.name}</li>
-              ))}
-            </ul>
-            <p>Height: {height * 10}cm</p>
-            <p>Weight: {weight / 10}kg </p>
-          </>
-        ) : (
-          <p>Loding data...</p>
-        )}
+        {/* <h2>{name.charAt(0).toUpperCase() + name.slice(1).toLowerCase()}</h2>
+        <img src={sprites.front_default} alt={name} /> */}
+        <p>Abilities:</p>
+        {/* <ul>
+          {abilities.map((ability, index) => (
+            <li key={index}>{ability.ability.name}</li>
+          ))}
+        </ul>
+        <p>Height: {height * 10}cm</p>
+        <p>Weight: {weight / 10}kg </p> */}
       </div>
     );
   }
