@@ -19,7 +19,7 @@ class Home extends Component {
   // similar to useEffect hook, perform API request when component is rendered for 1st time
   componentDidMount() {
     console.log("Flow step 3: componentDidMount");
-    fetch("https://pokeapi.co/api/v2/pokemon/?limit=30")
+    fetch("https://pokeapi.co/api/v2/pokemon/?limit=52")
       .then((response) => response.json())
       .then((data) =>
         this.setState(
@@ -52,9 +52,6 @@ class Home extends Component {
     const { monsters, searchField } = this.state;
     const { onSearch } = this;
 
-    const imgUrl =
-      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/";
-
     // new array of Pokémon whose names include letters the user typed
     const filteredPokemon = monsters.filter((monster) =>
       monster.name.toLowerCase().includes(searchField)
@@ -65,7 +62,7 @@ class Home extends Component {
         <h1 className="app-title">Pokémon Rolodex</h1>
         <SearchBox onChangeHandler={onSearch} placeholder="Search Pokémon" />
         {/* if no filter search was typed, filteredPokemon = state.monsters */}
-        <CardList monsters={filteredPokemon} imageLink={imgUrl} />
+        <CardList monsters={filteredPokemon} />
       </div>
     );
   }
