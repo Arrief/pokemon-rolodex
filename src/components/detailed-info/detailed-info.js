@@ -1,5 +1,5 @@
 import { Component } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import "../card/card.styles.css";
 import "./detailed-info.styles.css";
 
@@ -34,40 +34,44 @@ class DetailedInfo extends Component {
   }
 
   render() {
-    console.log(this.state.pokemonDetails);
-    const { abilities, height, name, sprites, weight } =
+    console.log(this.state);
+    const { abilities, height, id, name, sprites, weight } =
       this.state.pokemonDetails;
 
     return (
-      <div className="card-container card-detail">
-        {this.state.ApiLoaded ? (
-          <div
-            style={{
-              flexDirection: "column",
-              alignItems: "flex-start",
-              justifyContent: "flex-start",
-            }}
-          >
-            {" "}
-            <h1>
-              {name.charAt(0).toUpperCase() + name.slice(1).toLowerCase()}
-            </h1>
-            <img src={sprites.front_default} alt={name} />
-            <h3>Abilities:</h3>
-            <ul>
-              {abilities.map((ability, index) => (
-                <li key={index} style={{ textAlign: "left" }}>
-                  {ability.ability.name}
-                </li>
-              ))}
-            </ul>
-            <h3>Height: {height * 10}cm</h3>
-            <h3>Weight: {weight / 10}kg </h3>
-          </div>
-        ) : (
-          <p>Loading data...</p>
-        )}
-      </div>
+      <>
+        <div className="card-container card-detail">
+          {this.state.ApiLoaded ? (
+            <div>
+              <h1>
+                {`#${id} ${
+                  name.charAt(0).toUpperCase() + name.slice(1).toLowerCase()
+                }`}
+              </h1>
+              <img
+                src={sprites.front_default}
+                alt={name}
+                className="poke-image"
+              />
+              <h3>Abilities:</h3>
+              <ul>
+                {abilities.map((ability, index) => (
+                  <li key={index}>{ability.ability.name}</li>
+                ))}
+              </ul>
+              <h3>Height:</h3>
+              <p>{height * 10}cm</p>
+              <h3>Weight:</h3>
+              <p>{weight / 10}kg</p>
+            </div>
+          ) : (
+            <p>Loading data...</p>
+          )}
+        </div>
+        <Link to="/" className="home-btn">
+          ← Back to the Pokédex
+        </Link>
+      </>
     );
   }
 }
