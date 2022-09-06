@@ -8,4 +8,4 @@ Just a simple app to get a little practice and better understanding of "the old 
 - React Router (v6)
 - [PokéAPI](https://pokeapi.co/)
 
-![Pika Pika!](https://raw.githubusercontent.com/Arrief/repo/main/src/assets/pikachu.png)
+![Pika Pika!](https://raw.githubusercontent.com/Arrief/class-components-react/main/src/assets/pikachu.png)
