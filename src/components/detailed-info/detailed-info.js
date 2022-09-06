@@ -1,6 +1,7 @@
 import { Component } from "react";
 import { useParams } from "react-router-dom";
 import "../card/card.styles.css";
+import "./detailed-info.styles.css";
 
 /* //! Solution to get URL params for class components in react-router6 by Gina Cooper: https://stackoverflow.com/questions/64782949/how-to-pass-params-into-link-using-react-router-v6/70733535#70733535
  */
@@ -15,6 +16,7 @@ class DetailedInfo extends Component {
     super();
     this.state = {
       pokemonDetails: {},
+      ApiLoaded: false,
     };
   }
 
@@ -26,7 +28,7 @@ class DetailedInfo extends Component {
       .then((response) => response.json())
       .then((pokeData) =>
         this.setState(() => {
-          return { pokemonDetails: pokeData };
+          return { pokemonDetails: pokeData, ApiLoaded: true };
         })
       );
   }
@@ -37,17 +39,34 @@ class DetailedInfo extends Component {
       this.state.pokemonDetails;
 
     return (
-      <div className="card-container" style={{ flexDirection: "column" }}>
-        {/* <h2>{name.charAt(0).toUpperCase() + name.slice(1).toLowerCase()}</h2>
-        <img src={sprites.front_default} alt={name} /> */}
-        <p>Abilities:</p>
-        {/* <ul>
-          {abilities.map((ability, index) => (
-            <li key={index}>{ability.ability.name}</li>
-          ))}
-        </ul>
-        <p>Height: {height * 10}cm</p>
-        <p>Weight: {weight / 10}kg </p> */}
+      <div className="card-container card-detail">
+        {this.state.ApiLoaded ? (
+          <div
+            style={{
+              flexDirection: "column",
+              alignItems: "flex-start",
+              justifyContent: "flex-start",
+            }}
+          >
+            {" "}
+            <h1>
+              {name.charAt(0).toUpperCase() + name.slice(1).toLowerCase()}
+            </h1>
+            <img src={sprites.front_default} alt={name} />
+            <h3>Abilities:</h3>
+            <ul>
+              {abilities.map((ability, index) => (
+                <li key={index} style={{ textAlign: "left" }}>
+                  {ability.ability.name}
+                </li>
+              ))}
+            </ul>
+            <h3>Height: {height * 10}cm</h3>
+            <h3>Weight: {weight / 10}kg </h3>
+          </div>
+        ) : (
+          <p>Loading data...</p>
+        )}
       </div>
     );
   }

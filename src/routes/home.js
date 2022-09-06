@@ -5,7 +5,7 @@ import SearchBox from "../components/search-box/search-box";
 class Home extends Component {
   // constructor method available on all class cmp, allows us to access local state
   constructor() {
-    // super calls constructor methods of any parent classes we are extending (here: React.Component)
+    // super calls constructor methods of any parent classes we are extending (here: React.Component), must be called if we want to use state!
     super();
     // initializing our state is pretty much main purpose to use constructor in React
     this.state = {
