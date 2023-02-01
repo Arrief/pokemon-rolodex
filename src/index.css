@@ -1,25 +1,38 @@
+:root {
+  --pokedex-dark: #252323;
+  --pokedex-green: #23be23;
+  --poke-blue: #2d6ab4;
+  --poke-yellow: #ffcc00;
+  --hover-link: red;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
 body {
-  margin: 0;
-  padding: 0;
-  font-family: "Josefin Sans", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   background: linear-gradient(
-    90deg,
+    45deg,
     rgba(255, 255, 255, 1) 0%,
     rgb(226, 35, 14) 100%
   );
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-sizing: border-box;
+  font-family: "Josefin Sans", sans-serif;
+  margin: 0;
+  min-height: 100vh;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   text-align: center;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
-}
-
 .app-title {
-  color: #ffcc00;
+  color: var(--poke-yellow);
   font-size: 3rem;
   margin-top: 3rem;
-  text-shadow: 4px 4px #2d6ab4;
+  text-shadow: 4px 4px var(--poke-blue);
 }

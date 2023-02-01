@@ -1,14 +1,16 @@
 .card-container {
   display: flex;
-  background-color: #ffcc00;
-  border: 16px solid #2d6ab4;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--poke-yellow);
+  border: 1rem solid var(--poke-blue);
   border-radius: 5px;
   padding: 25px;
   cursor: pointer;
   -moz-osx-font-smoothing: grayscale;
   backface-visibility: hidden;
-  transform: translateZ(0);
   transition: transform 0.25s ease-out;
+  width: 20rem;
 }
 
 .card-container:hover {
@@ -17,14 +19,15 @@
 
 .pokeball {
   width: 4rem;
-  margin-right: 4rem;
+  margin-right: 3rem;
 }
 
 .poke-link {
-  color: black;
+  color: var(--pokedex-dark);
   text-decoration: none;
+  margin: 0 auto;
 }
 
 .poke-link:hover {
-  color: red;
+  color: var(--hover-link);
 }

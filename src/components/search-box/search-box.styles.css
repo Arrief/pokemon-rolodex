@@ -1,14 +1,17 @@
 .search-box {
-  -webkit-appearance: none;
-  background-color: rgb(37, 35, 35);
+  background-color: var(--pokedex-dark);
   border: none;
-  color: rgb(35, 190, 35);
+  border-radius: 5px;
+  color: var(--pokedex-green);
   font-weight: bold;
   margin-top: 1rem;
-  outline: none;
   padding: 10px;
   text-align: center;
   width: 12rem;
   line-height: 30px;
   margin-bottom: 2.5rem;
+}
+
+.search-box:focus {
+  outline: 2px solid var(--pokedex-green);
 }

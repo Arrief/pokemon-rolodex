@@ -2,12 +2,12 @@
   padding: 2rem;
   margin-top: 2rem;
   text-decoration: none;
-  color: black;
+  color: var(--pokedex-dark);
   font-size: 24px;
 }
 
 .home-btn:hover {
-  color: red;
+  color: var(--hover-link);
   text-decoration: underline;
 }
 
@@ -17,7 +17,7 @@
   align-items: center;
   justify-content: center;
   margin: 4rem auto;
-  width: 40rem;
+  width: 40%;
   gap: 4rem;
   font-size: 20px;
 }
@@ -42,4 +42,10 @@ ul {
 li {
   text-align: center;
   line-height: 2rem;
+}
+
+@media screen and (max-width: 800px) {
+  .card-detail {
+    width: 15rem;
+  }
 }
