@@ -4,6 +4,7 @@ import pokeball from "../../assets/pokeball.png";
 import "./card.styles.css";
 
 class Card extends Component {
+  // constructor is running under the hood even though we did not write it here
   render() {
     const { monster, id } = this.props;
 

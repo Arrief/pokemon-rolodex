@@ -18,7 +18,7 @@ class Home extends Component {
   // similar to useEffect hook, perform API request when component is rendered for 1st time
   componentDidMount() {
     console.log("Flow step 3: componentDidMount");
-    fetch("https://pokeapi.co/api/v2/pokemon/?limit=52")
+    fetch("https://pokeapi.co/api/v2/pokemon/?limit=251")
       .then((response) => response.json())
       .then((data) =>
         this.setState(

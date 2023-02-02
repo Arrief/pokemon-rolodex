@@ -9,12 +9,7 @@
   cursor: pointer;
   -moz-osx-font-smoothing: grayscale;
   backface-visibility: hidden;
-  transition: transform 0.25s ease-out;
   width: 20rem;
-}
-
-.card-container:hover {
-  transform: scale(1.05);
 }
 
 .pokeball {
@@ -26,8 +21,10 @@
   color: var(--pokedex-dark);
   text-decoration: none;
   margin: 0 auto;
+  transition: transform 0.2s ease-out;
 }
 
 .poke-link:hover {
   color: var(--hover-link);
+  transform: scale(1.05);
 }
