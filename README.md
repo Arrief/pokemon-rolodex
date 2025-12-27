@@ -6,13 +6,12 @@
 
 ## Table of Contents
 
-- [Pokémon Rolodex](#pokemon-rolodex)
-  1. [Live demo](#-live-demo)
-  2. [Introduction](#-introduction)
-  3. [Features](#-features)
-  4. [Installation](#-installation)
-  5. [Development info](#-development-info)
-  6. [Created with](#-created-with)
+1. [Live demo](#-live-demo)
+2. [Introduction](#-introduction)
+3. [Features](#-features)
+4. [Installation](#-installation)
+5. [Development info](#-development-info)
+6. [Created with](#-created-with)
 
 ## Introduction
 
@@ -36,9 +35,9 @@
 
 ## Installation
 
-After cloning this repository from Github, use the terminal to cd into the folder, then run `npm install`.
+After cloning this repository from Github, use the terminal to `cd` into the `pokemon-rolodex` directory, then run `npm install`.
 
-After that, run `npm start` and keep your terminal window open and running while using the application locally.
+After that, run `npm start` and keep your terminal window open and running while using the application locally. The app runs on `http://localhost:5173/`.
 
 ## Development info
 
